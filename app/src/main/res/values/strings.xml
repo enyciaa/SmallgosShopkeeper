@@ -10,5 +10,6 @@
     <string name="item_name_price">Price</string>
     <string name="item_name_description">Description</string>
     <string name="item_name_quantity">Quantity</string>
+    <string name="data_missing">Please Enter All Data</string>
 
 </resources>
