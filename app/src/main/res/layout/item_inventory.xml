@@ -17,10 +17,10 @@
 
         <ImageView
             android:id="@+id/itemInventoryItemPicture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/grid_64"
+            android:layout_height="@dimen/grid_64"
             android:layout_marginRight="@dimen/grid_16"
-            android:src="@drawable/ic_inventory"
+            android:src="@drawable/ic_placeholder"
             />
 
         <LinearLayout

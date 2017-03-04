@@ -7,14 +7,15 @@
     <application
         android:name=".SmallgosApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/SmallgosTheme">
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:icon="@drawable/ic_logo_white">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -24,6 +25,7 @@
         <activity
             android:name=".AddItemActivity"
             android:label="Add Item"
+            android:icon="@drawable/ic_logo_white"
             />
 
     </application>

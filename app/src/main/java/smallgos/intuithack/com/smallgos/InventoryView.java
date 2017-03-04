@@ -43,6 +43,7 @@ public class InventoryView extends CoordinatorLayout {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         inventoryList.setLayoutManager(linearLayoutManager);
         inventoryList.setAdapter(inventoryAdapter);
+        inventoryList.addItemDecoration(new TopSpaceDecoration(getContext().getResources().getDimensionPixelOffset(R.dimen.grid_16)));
 
         SmallgosNetwork.INSTANCE.getInventory()
                 .subscribeOn(Schedulers.newThread())
