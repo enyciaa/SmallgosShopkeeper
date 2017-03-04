@@ -27,6 +27,14 @@ public class AddItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add_item);
         ButterKnife.bind(this);
+
+        setSupportActionBar(binding.toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("   " + getSupportActionBar().getTitle());
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setIcon(R.drawable.ic_logo_white);
+        }
+
     }
 
     @OnClick(R.id.itemAddButton)

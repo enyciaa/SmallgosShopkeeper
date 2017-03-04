@@ -8,89 +8,97 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/grid_16"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:weightSum="1"
         >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:text="@string/add_invenory_item_title"
-            android:textAppearance="@style/SmallgosTextTitle"
-            />
-
-        <ImageView
-            android:id="@+id/itemPicture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/grid_16"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_placeholder"
-            />
-
-        <EditText
-            android:id="@+id/itemName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/item_name_hint"
-            android:textAppearance="@style/SmallgosTextTitle"
-            />
-
-        <EditText
-            android:id="@+id/itemProductId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/item_product_id_hint"
-            android:textAppearance="@style/SmallgosTextSubtitle"
-            />
-
-        <View
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/divider_height"
-            android:layout_marginTop="@dimen/grid_16"
-            android:layout_marginBottom="@dimen/grid_16"
-            android:background="@color/black_10"
+            android:background="@color/colorPrimary"
+            app:titleTextColor="@color/white_100"
             />
 
-        <EditText
-            android:id="@+id/itemPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:hint="@string/item_name_price"
-            android:textAppearance="@style/SmallgosTextSubtitle"
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/grid_16"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:weightSum="1"
+            >
 
-        <EditText
-            android:id="@+id/itemDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/grid_16"
-            android:layout_gravity="left"
-            android:hint="@string/item_name_description"
-            android:textAppearance="@style/SmallgosTextSubtitle"
-            />
+            <ImageView
+                android:id="@+id/itemPicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/grid_16"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_placeholder"
+                />
 
-        <EditText
-            android:id="@+id/itemQuantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginBottom="@dimen/grid_16"
-            android:hint="@string/item_name_quantity"
-            android:textAppearance="@style/SmallgosTextSubtitle"
-            />
+            <EditText
+                android:id="@+id/itemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/item_name_hint"
+                android:textAppearance="@style/SmallgosTextTitle"
+                />
 
-        <Button
-            android:id="@+id/itemAddButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="@string/inventory_item_add_button"/>
+            <EditText
+                android:id="@+id/itemProductId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/item_product_id_hint"
+                android:textAppearance="@style/SmallgosTextSubtitle"
+                />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:layout_marginTop="@dimen/grid_16"
+                android:layout_marginBottom="@dimen/grid_16"
+                android:background="@color/black_10"
+                />
+
+            <EditText
+                android:id="@+id/itemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:hint="@string/item_name_price"
+                android:textAppearance="@style/SmallgosTextSubtitle"
+                />
+
+            <EditText
+                android:id="@+id/itemDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/grid_16"
+                android:layout_gravity="left"
+                android:hint="@string/item_name_description"
+                android:textAppearance="@style/SmallgosTextSubtitle"
+                />
+
+            <EditText
+                android:id="@+id/itemQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="@dimen/grid_16"
+                android:hint="@string/item_name_quantity"
+                android:textAppearance="@style/SmallgosTextSubtitle"
+                />
+
+            <Button
+                android:id="@+id/itemAddButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@string/inventory_item_add_button"/>
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
