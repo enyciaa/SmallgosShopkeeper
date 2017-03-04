@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="smallgos.intuithack.com.smallgos">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".SmallgosApplication"
         android:allowBackup="true"

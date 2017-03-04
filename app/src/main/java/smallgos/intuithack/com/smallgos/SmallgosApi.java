@@ -4,7 +4,9 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import smallgos.intuithack.com.smallgos.model.CatalogResponse;
 import smallgos.intuithack.com.smallgos.model.InventoryItem;
 
 public interface SmallgosApi {
@@ -13,5 +15,8 @@ public interface SmallgosApi {
 
     @POST("catalog")
     Call<List<InventoryItem>> addItem(@Body List<InventoryItem> items);
+
+    @GET("catalog")
+    Call<CatalogResponse> getInventory();
 
 }
