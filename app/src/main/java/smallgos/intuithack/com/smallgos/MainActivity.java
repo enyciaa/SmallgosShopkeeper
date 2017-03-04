@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        setSupportActionBar(binding.toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         LayoutInflater inflater = getLayoutInflater();
         inventoryView = (InventoryView) inflater.inflate(R.layout.view_inventory, binding.mainContainer, false);
