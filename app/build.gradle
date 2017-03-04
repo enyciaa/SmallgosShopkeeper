@@ -30,5 +30,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.2.0'
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-    compile files('D:/Projects/SmallgosShopkeeper/libs/android-json-rpc-0.3.4.jar')
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.moshi:moshi:1.4.0'
+    compile 'com.squareup.retrofit2:converter-moshi:2.2.0'
 }

@@ -7,7 +7,7 @@ public class SmallgosApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Network.INSTANCE.init();
+        SmallgosNetwork.INSTANCE.init();
     }
 
 }
