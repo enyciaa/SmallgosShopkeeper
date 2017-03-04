@@ -18,6 +18,11 @@
         <item name="textColor">@color/black_100</item>
     </style>
 
+    <style name="SmallgosTextSubtitle" parent="TextAppearance.AppCompat.Subhead">
+        <item name="textSize">@dimen/text_24</item>
+        <item name="textColor">@color/black_100</item>
+    </style>
+
     <style name="SmallgosTextBody" parent="TextAppearance.AppCompat.Body1">
         <item name="textSize">@dimen/text_16</item>
         <item name="textColor">@color/black_100</item>

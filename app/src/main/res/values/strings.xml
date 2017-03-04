@@ -5,5 +5,10 @@
     <string name="inventory_item_quantity">Quantity: %d</string>
     <string name="inventory_item_add_button">Add</string>
     <string name="add_invenory_item_title">New Item</string>
+    <string name="item_name_hint">Name</string>
+    <string name="item_product_id_hint">Product Id</string>
+    <string name="item_name_price">Price</string>
+    <string name="item_name_description">Description</string>
+    <string name="item_name_quantity">Quantity</string>
 
 </resources>
