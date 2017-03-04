@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/grid_16"
             android:layout_gravity="center_horizontal"
-            tools:src="@drawable/ic_orders"
+            android:src="@drawable/ic_placeholder"
             />
 
         <EditText

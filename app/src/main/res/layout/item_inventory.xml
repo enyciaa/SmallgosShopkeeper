@@ -1,71 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/grid_16"
-    android:weightSum="1"
     >
 
-    <ImageView
-        android:id="@+id/itemInventoryItemPicture"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/grid_16"
-        android:src="@drawable/ic_inventory"
+        android:weightSum="1"
+        >
+
+        <ImageView
+            android:id="@+id/itemInventoryItemPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/grid_16"
+            android:src="@drawable/ic_inventory"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/itemInventoryItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/grid_half_4"
+                android:textColor="@color/black_100"
+                android:textSize="@dimen/text_24"
+                tools:text="Jumper"/>
+
+            <TextView
+                android:id="@+id/itemInventoryItemCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_100"
+                android:textSize="@dimen/text_16"
+                tools:text="X67Y89G"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/itemInventoryItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/grid_half_4"
+                android:textColor="@color/black_100"
+                android:textSize="@dimen/text_24"
+                tools:text="$15"/>
+
+            <TextView
+                android:id="@+id/itemInventoryItemQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_100"
+                android:textSize="@dimen/text_16"
+                tools:text="@string/inventory_item_quantity"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/grid_16"
+        android:layout_marginBottom="@dimen/grid_16"
+        android:background="@color/black_10"
         />
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-
-        <TextView
-            android:id="@+id/itemInventoryItemName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/grid_half_4"
-            android:textColor="@color/black_100"
-            android:textSize="@dimen/text_24"
-            tools:text="Jumper"/>
-
-        <TextView
-            android:id="@+id/itemInventoryItemCode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black_100"
-            android:textSize="@dimen/text_16"
-            tools:text="X67Y89G"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="right"
-        android:orientation="vertical"
-        >
-
-        <TextView
-            android:id="@+id/itemInventoryItemPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/grid_half_4"
-            android:textColor="@color/black_100"
-            android:textSize="@dimen/text_24"
-            tools:text="$15"/>
-
-        <TextView
-            android:id="@+id/itemInventoryItemQuantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black_100"
-            android:textSize="@dimen/text_16"
-            tools:text="@string/inventory_item_quantity"/>
-
-    </LinearLayout>
 
 </LinearLayout>
