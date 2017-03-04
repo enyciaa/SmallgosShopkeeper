@@ -8,6 +8,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -35,14 +37,17 @@ public class InventoryView extends CoordinatorLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.bind(this);
-        String[] data = new String[3];
-        data[0] = "Inventory item 1";
-        data[1] = "Inventory item 2";
-        data[2] = "Inventory item 3";
-        InventoryAdapter inventoryAdapter = new InventoryAdapter(data);
+        InventoryAdapter inventoryAdapter = new InventoryAdapter(new ArrayList<>());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         inventoryList.setLayoutManager(linearLayoutManager);
         inventoryList.setAdapter(inventoryAdapter);
+
+        SmallgosNetwork.INSTANCE.getInventory()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(catalogResponse -> {
+                    ((InventoryAdapter) inventoryList.getAdapter()).addItems(catalogResponse.getItems());
+                });
     }
 
     @OnClick (R.id.addButton)
