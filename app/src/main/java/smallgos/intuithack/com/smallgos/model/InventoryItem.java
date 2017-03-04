@@ -2,16 +2,32 @@ package smallgos.intuithack.com.smallgos.model;
 
 public class InventoryItem {
 
+    public String image;
+    public String productId;
     public String name;
+    public String description;
     public String title;
-    public int price;
+    public double price;
     public int stock;
 
-    public InventoryItem(String name, String title, int price, int stock) {
-        this.name = name;
-        this.title = title;
-        this.price = price;
-        this.stock = stock;
+    public InventoryItem() {
+
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
     public String getName() {
@@ -19,7 +35,15 @@ public class InventoryItem {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = "item:" + name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getTitle() {
@@ -30,11 +54,11 @@ public class InventoryItem {
         this.title = title;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

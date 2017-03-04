@@ -4,6 +4,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:buttonStyle">@style/SmallgosButton</item>
+    </style>
+    
+    <style name="SmallgosButton" parent="android:Widget.Material.Button">
+        <item name="android:textColor">@color/white_100</item>
+        <item name="android:singleLine">true</item>
     </style>
 
 </resources>

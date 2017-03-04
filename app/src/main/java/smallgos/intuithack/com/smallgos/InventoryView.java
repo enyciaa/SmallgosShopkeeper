@@ -1,11 +1,11 @@
 package smallgos.intuithack.com.smallgos;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +54,7 @@ public class InventoryView extends CoordinatorLayout {
 
     @OnClick (R.id.addButton)
     void addItem() {
-        Toast.makeText(getContext(), "GO TO MANAGE ITEM SCREEN", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), AddItemActivity.class);
+        getContext().startActivity(intent);
     }
 }

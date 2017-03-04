@@ -29,19 +29,9 @@ public enum SmallgosNetwork {
         smallgosApi = retrofit.create(SmallgosApi.class);
     }
 
-    public void addItem(List<InventoryItem> items) {
-//        Observable<List<InventoryItem>> call = smallgosApi.addItem(items);
-//        call.enqueue(new Callback<List<InventoryItem>>() {
-//            @Override
-//            public void onResponse(Call<List<InventoryItem>> call, Response<List<InventoryItem>> response) {
-//                Log.i("Test", "call success");
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<InventoryItem>> call, Throwable t) {
-//                Log.i("Test", "call failure");
-//            }
-//        });
+    public Observable<CatalogResponse> addItem(List<InventoryItem> items) {
+        CatalogResponse catalogResponse = new CatalogResponse(items);
+        return smallgosApi.addItem(catalogResponse);
     }
 
     public Observable<CatalogResponse> getInventory() {
