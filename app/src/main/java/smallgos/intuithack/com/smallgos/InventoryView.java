@@ -5,11 +5,14 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class InventoryView extends CoordinatorLayout {
 
@@ -45,6 +48,11 @@ public class InventoryView extends CoordinatorLayout {
     @OnClick (R.id.addButton)
     void addItem() {
         Toast.makeText(getContext(), "GO TO MANAGE ITEM SCREEN", Toast.LENGTH_SHORT).show();
-        SmallgosNetwork.INSTANCE.getInventory();
+        SmallgosNetwork.INSTANCE.getInventory()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(inventory -> {
+                    Log.e("Test", "item");
+                });
     }
 }

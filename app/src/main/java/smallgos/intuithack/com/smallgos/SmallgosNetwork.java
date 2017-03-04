@@ -1,17 +1,13 @@
 package smallgos.intuithack.com.smallgos;
 
-import android.util.Log;
-
 import com.squareup.moshi.Moshi;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.moshi.MoshiConverterFactory;
+import rx.Observable;
 import smallgos.intuithack.com.smallgos.model.CatalogResponse;
 import smallgos.intuithack.com.smallgos.model.InventoryItem;
 
@@ -26,43 +22,30 @@ public enum SmallgosNetwork {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(SmallgosApi.BASE_URL)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(MoshiConverterFactory.create(moshi))
                 .build();
 
         smallgosApi = retrofit.create(SmallgosApi.class);
     }
 
-    public void addItem() {
-        List<InventoryItem> items = new ArrayList<>();
-//        InventoryItem item = new InventoryItem("Tomatoes");
-//        items.add(item);
-        Call<List<InventoryItem>> call = smallgosApi.addItem(items);
-        call.enqueue(new Callback<List<InventoryItem>>() {
-            @Override
-            public void onResponse(Call<List<InventoryItem>> call, Response<List<InventoryItem>> response) {
-                Log.i("Test", "call success");
-            }
-
-            @Override
-            public void onFailure(Call<List<InventoryItem>> call, Throwable t) {
-                Log.i("Test", "call failure");
-            }
-        });
+    public void addItem(List<InventoryItem> items) {
+//        Observable<List<InventoryItem>> call = smallgosApi.addItem(items);
+//        call.enqueue(new Callback<List<InventoryItem>>() {
+//            @Override
+//            public void onResponse(Call<List<InventoryItem>> call, Response<List<InventoryItem>> response) {
+//                Log.i("Test", "call success");
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<InventoryItem>> call, Throwable t) {
+//                Log.i("Test", "call failure");
+//            }
+//        });
     }
 
-    public void getInventory() {
-        Call<CatalogResponse> call = smallgosApi.getInventory();
-        call.enqueue(new Callback<CatalogResponse>() {
-            @Override
-            public void onResponse(Call<CatalogResponse> call, Response<CatalogResponse> response) {
-                Log.i("Test", "call success");
-            }
-
-            @Override
-            public void onFailure(Call<CatalogResponse> call, Throwable t) {
-                Log.i("Test", "call failure");
-            }
-        });
+    public Observable<CatalogResponse> getInventory() {
+        return smallgosApi.getInventory();
     }
 
 
