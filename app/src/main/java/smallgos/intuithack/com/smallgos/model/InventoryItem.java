@@ -3,11 +3,13 @@ package smallgos.intuithack.com.smallgos.model;
 public class InventoryItem {
 
     public String name;
+    public String title;
     public int price;
     public int stock;
 
-    public InventoryItem(String name, int price, int stock) {
+    public InventoryItem(String name, String title, int price, int stock) {
         this.name = name;
+        this.title = title;
         this.price = price;
         this.stock = stock;
     }
@@ -18,6 +20,14 @@ public class InventoryItem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getPrice() {

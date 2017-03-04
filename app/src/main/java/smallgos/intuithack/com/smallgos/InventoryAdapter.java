@@ -1,8 +1,10 @@
 package smallgos.intuithack.com.smallgos;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,9 +16,11 @@ import smallgos.intuithack.com.smallgos.model.InventoryItem;
 
 public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.ViewHolder> {
 
+    private Context context;
     private List<InventoryItem> items;
 
-    public InventoryAdapter(List<InventoryItem> items) {
+    public InventoryAdapter(Context context, List<InventoryItem> items) {
+        this.context = context;
         this.items = items;
     }
 
@@ -28,7 +32,9 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.itemInventoryTitle.setText(items.get(position).getName());
+        holder.itemInventoryItemName.setText(items.get(position).getTitle());
+        holder.itemInventoryItemPrice.setText("£" + items.get(position).getPrice());
+        holder.itemInventoryItemQuantity.setText(context.getString(R.string.inventory_item_quantity, items.get(position).getStock()));
     }
 
     public void addItems(List<InventoryItem> items) {
@@ -43,8 +49,16 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.itemInventoryTitle)
-        TextView itemInventoryTitle;
+        @BindView(R.id.itemInventoryItemPicture)
+        ImageView itemInventoryItemPicture;
+        @BindView(R.id.itemInventoryItemName)
+        TextView itemInventoryItemName;
+        @BindView(R.id.itemInventoryItemCode)
+        TextView itemInventoryItemCode;
+        @BindView(R.id.itemInventoryItemPrice)
+        TextView itemInventoryItemPrice;
+        @BindView(R.id.itemInventoryItemQuantity)
+        TextView itemInventoryItemQuantity;
 
 
         public ViewHolder(LinearLayout view) {

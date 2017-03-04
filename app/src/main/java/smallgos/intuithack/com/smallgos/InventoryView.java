@@ -5,16 +5,17 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import smallgos.intuithack.com.smallgos.model.InventoryItem;
 
 public class InventoryView extends CoordinatorLayout {
 
@@ -37,7 +38,8 @@ public class InventoryView extends CoordinatorLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.bind(this);
-        InventoryAdapter inventoryAdapter = new InventoryAdapter(new ArrayList<>());
+        List<InventoryItem> items = new ArrayList<>();
+        InventoryAdapter inventoryAdapter = new InventoryAdapter(getContext(), items);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         inventoryList.setLayoutManager(linearLayoutManager);
         inventoryList.setAdapter(inventoryAdapter);
@@ -53,11 +55,5 @@ public class InventoryView extends CoordinatorLayout {
     @OnClick (R.id.addButton)
     void addItem() {
         Toast.makeText(getContext(), "GO TO MANAGE ITEM SCREEN", Toast.LENGTH_SHORT).show();
-        SmallgosNetwork.INSTANCE.getInventory()
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(inventory -> {
-                    Log.e("Test", "item");
-                });
     }
 }
