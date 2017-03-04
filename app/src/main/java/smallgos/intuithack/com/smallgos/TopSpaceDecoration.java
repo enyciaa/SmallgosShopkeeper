@@ -13,10 +13,6 @@ public class TopSpaceDecoration extends RecyclerView.ItemDecoration {
 
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        if(parent.getChildAdapterPosition(view) == state.getItemCount()-1){
-            outRect.bottom = space;
-            outRect.top = 0; //don't forget about recycling...
-        }
         if(parent.getChildAdapterPosition(view) == 0){
             outRect.top = space;
             outRect.bottom = 0;

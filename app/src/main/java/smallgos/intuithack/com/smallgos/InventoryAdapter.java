@@ -32,6 +32,9 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        if (items.get(position).getImage() != null) {
+            holder.itemInventoryItemPicture.setImageDrawable(Utils.convertBase64ToDrawable(context, items.get(position).getImage()));
+        }
         holder.itemInventoryItemName.setText(items.get(position).getTitle());
         holder.itemInventoryItemPrice.setText("£" + items.get(position).getPrice());
         holder.itemInventoryItemQuantity.setText(context.getString(R.string.inventory_item_quantity, items.get(position).getStock()));
