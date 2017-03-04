@@ -42,8 +42,9 @@ public class InventoryView extends CoordinatorLayout {
         inventoryList.setAdapter(inventoryAdapter);
     }
 
-    @OnClick
+    @OnClick (R.id.addButton)
     void addItem() {
         Toast.makeText(getContext(), "GO TO MANAGE ITEM SCREEN", Toast.LENGTH_SHORT).show();
+        Network.INSTANCE.getInventory();
     }
 }

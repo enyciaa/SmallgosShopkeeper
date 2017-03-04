@@ -3,6 +3,7 @@
     package="smallgos.intuithack.com.smallgos">
 
     <application
+        android:name=".SmallgosApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
