@@ -18,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         setSupportActionBar(binding.toolbar);
         if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("  " + getSupportActionBar().getTitle());
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setIcon(R.drawable.ic_logo_white);
         }
 
         LayoutInflater inflater = getLayoutInflater();
