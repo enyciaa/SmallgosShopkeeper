@@ -30,13 +30,6 @@ public class AddItemActivity extends AppCompatActivity {
 
     @OnClick(R.id.itemAddButton)
     void addItem() {
-        item.setProductId("XCY34X9");
-        item.setName("Chocolate");
-        item.setTitle("Chocolate");
-        item.setDescription("Chocolate melt in your mouth goodness");
-        item.setPrice(2.00);
-        item.setStock(20);
-
         List<InventoryItem> items = new ArrayList<>();
         items.add(item);
 
@@ -44,7 +37,7 @@ public class AddItemActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(catalogResponse -> {
-                    Log.i("Test", "respnse");
+                    Log.i("Test", "response");
                 });
     }
 }

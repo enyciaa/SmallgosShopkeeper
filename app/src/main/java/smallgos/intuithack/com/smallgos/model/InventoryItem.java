@@ -7,8 +7,8 @@ public class InventoryItem {
     public String name;
     public String description;
     public String title;
-    public double price;
-    public int stock;
+    public String price;
+    public String stock;
 
     public InventoryItem() {
 
@@ -54,19 +54,19 @@ public class InventoryItem {
         this.title = title;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public int getStock() {
+    public String getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public void setStock(String stock) {
         this.stock = stock;
     }
 }

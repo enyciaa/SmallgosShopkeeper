@@ -4,4 +4,6 @@
     <string name="orders_title">Orders</string>
     <string name="inventory_item_quantity">Quantity: %d</string>
     <string name="inventory_item_add_button">Add</string>
+    <string name="add_invenory_item_title">New Item</string>
+
 </resources>
