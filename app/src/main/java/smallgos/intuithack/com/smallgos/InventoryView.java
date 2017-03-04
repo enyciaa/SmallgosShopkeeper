@@ -1,17 +1,17 @@
 package smallgos.intuithack.com.smallgos;
 
 import android.content.Context;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class InventoryView extends LinearLayout {
+public class InventoryView extends CoordinatorLayout {
 
     @BindView(R.id.inventoryList)
     RecyclerView inventoryList;
@@ -26,10 +26,6 @@ public class InventoryView extends LinearLayout {
 
     public InventoryView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-    }
-
-    public InventoryView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
     }
 
     @Override

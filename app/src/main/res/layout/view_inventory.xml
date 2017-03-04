@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical"
     >
 
     <android.support.v7.widget.RecyclerView
@@ -23,6 +22,9 @@
         android:layout_margin="@dimen/grid_16"
         app:layout_anchorGravity="bottom|end"
         app:fabSize="normal"
+        app:pressedTranslationZ="6dp"
+        app:rippleColor="@color/white_100"
+        android:elevation="@dimen/elevation_4"
         app:srcCompat="@drawable/ic_add" />
 
 </smallgos.intuithack.com.smallgos.InventoryView>

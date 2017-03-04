@@ -6,4 +6,6 @@
 
     <dimen name="text_16">16sp</dimen>
     <dimen name="text_24">24sp</dimen>
+
+    <dimen name="elevation_4">4dp</dimen>
 </resources>
