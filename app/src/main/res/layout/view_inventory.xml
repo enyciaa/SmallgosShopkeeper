@@ -20,11 +20,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/grid_16"
+        android:elevation="@dimen/elevation_4"
+        app:layout_anchor="@id/inventoryList"
         app:layout_anchorGravity="bottom|end"
         app:fabSize="normal"
         app:pressedTranslationZ="6dp"
         app:rippleColor="@color/white_100"
-        android:elevation="@dimen/elevation_4"
         app:srcCompat="@drawable/ic_add" />
 
 </smallgos.intuithack.com.smallgos.InventoryView>
