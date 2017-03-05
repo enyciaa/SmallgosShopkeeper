@@ -39,17 +39,19 @@
 
             <EditText
                 android:id="@+id/itemName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:hint="@string/item_name_hint"
                 android:textAppearance="@style/SmallgosTextTitle"
                 />
 
             <EditText
-                android:id="@+id/itemProductId"
-                android:layout_width="wrap_content"
+                android:id="@+id/itemDescription"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/item_product_id_hint"
+                android:gravity="center_horizontal"
+                android:hint="@string/item_name_description"
                 android:textAppearance="@style/SmallgosTextSubtitle"
                 />
 
@@ -71,12 +73,12 @@
                 />
 
             <EditText
-                android:id="@+id/itemDescription"
+                android:id="@+id/itemProductId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/grid_16"
                 android:layout_gravity="left"
-                android:hint="@string/item_name_description"
+                android:hint="@string/item_product_id_hint"
                 android:textAppearance="@style/SmallgosTextSubtitle"
                 />
 
