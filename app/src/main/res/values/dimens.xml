@@ -6,8 +6,8 @@
     <dimen name="grid_64">64dp</dimen>
 
 
-    <dimen name="text_small">12sp</dimen>
-    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_small">16sp</dimen>
+    <dimen name="text_medium">20sp</dimen>
     <dimen name="text_large">24sp</dimen>
 
     <dimen name="elevation_4">4dp</dimen>

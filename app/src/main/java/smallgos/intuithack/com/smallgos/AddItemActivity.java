@@ -66,16 +66,19 @@ public class AddItemActivity extends AppCompatActivity {
     @OnClick(R.id.itemAddButton)
     void addItem() {
         InventoryItem item = new InventoryItem();
+        String image = Utils.convertDrawableToBase64(this, binding.itemPicture.getDrawable());
         String name = binding.itemName.getText().toString();
         String productId = binding.itemProductId.getText().toString();
         String price = binding.itemPrice.getText().toString();
         String description = binding.itemDescription.getText().toString();
         String quantity = binding.itemQuantity.getText().toString();
-        if (!TextUtils.isEmpty(name)
+        if (!TextUtils.isEmpty(image)
+                && !TextUtils.isEmpty(name)
                 && !TextUtils.isEmpty(productId)
                 && !TextUtils.isEmpty(price)
                 && !TextUtils.isEmpty(description)
                 && !TextUtils.isEmpty(quantity)) {
+            item.setImage(image);
             item.setName(name);
             item.setProductId(productId);
             item.setPrice(price);
