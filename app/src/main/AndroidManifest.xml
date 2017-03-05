@@ -27,6 +27,7 @@
             android:name=".AddItemActivity"
             android:label="Add Item"
             android:icon="@drawable/ic_logo_white"
+            android:windowSoftInputMode="adjustPan"
             />
 
     </application>
