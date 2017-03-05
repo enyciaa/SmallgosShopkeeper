@@ -41,6 +41,8 @@
                 android:id="@+id/itemName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/grid_24"
+                android:layout_marginRight="@dimen/grid_24"
                 android:gravity="center_horizontal"
                 android:hint="@string/item_name_hint"
                 android:textAppearance="@style/SmallgosTextTitle"
@@ -50,6 +52,8 @@
                 android:id="@+id/itemDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/grid_24"
+                android:layout_marginRight="@dimen/grid_24"
                 android:gravity="center_horizontal"
                 android:hint="@string/item_name_description"
                 android:textAppearance="@style/SmallgosTextSubtitle"
@@ -65,8 +69,9 @@
 
             <EditText
                 android:id="@+id/itemPrice"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/grid_64"
                 android:layout_gravity="left"
                 android:hint="@string/item_name_price"
                 android:textAppearance="@style/SmallgosTextSubtitle"
@@ -74,8 +79,9 @@
 
             <EditText
                 android:id="@+id/itemProductId"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/grid_64"
                 android:layout_marginBottom="@dimen/grid_16"
                 android:layout_gravity="left"
                 android:hint="@string/item_product_id_hint"
@@ -84,8 +90,9 @@
 
             <EditText
                 android:id="@+id/itemQuantity"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/grid_64"
                 android:layout_gravity="left"
                 android:layout_marginBottom="@dimen/grid_16"
                 android:hint="@string/item_name_quantity"
@@ -96,6 +103,7 @@
                 android:id="@+id/itemAddButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
                 android:layout_gravity="right"
                 android:text="@string/inventory_item_add_button"/>
 

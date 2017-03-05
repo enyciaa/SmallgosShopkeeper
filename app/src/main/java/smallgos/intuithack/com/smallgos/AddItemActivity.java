@@ -1,7 +1,12 @@
 package smallgos.intuithack.com.smallgos;
 
+import android.content.Intent;
+import android.database.Cursor;
 import android.databinding.DataBindingUtil;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -20,6 +25,8 @@ import smallgos.intuithack.com.smallgos.model.InventoryItem;
 
 public class AddItemActivity extends AppCompatActivity {
 
+    public static final int PICTURE_REQUEST_CODE = 1787;
+
     private ActivityAddItemBinding binding;
 
     @Override
@@ -34,7 +41,32 @@ public class AddItemActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setIcon(R.drawable.ic_logo_white);
         }
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            if (requestCode == PICTURE_REQUEST_CODE && resultCode == RESULT_OK && null != data) {
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                Cursor cursor = getContentResolver().query(selectedImage,filePathColumn, null, null, null);
+                cursor.moveToFirst();
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                String picturePath = cursor.getString(columnIndex);
+                cursor.close();
+                binding.itemPicture.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+            }
+        }
+    }
+
+    @OnClick(R.id.itemPicture)
+    void addPicture() {
+        final Intent galleryIntent = new Intent();
+        galleryIntent.setType("image/*");
+        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+
+        final Intent chooserIntent = Intent.createChooser(galleryIntent, "Select Source");
+        startActivityForResult(chooserIntent, PICTURE_REQUEST_CODE);
     }
 
     @OnClick(R.id.itemAddButton)
