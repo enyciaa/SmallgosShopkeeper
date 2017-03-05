@@ -16,6 +16,7 @@ import smallgos.intuithack.com.smallgos.model.InventoryItem;
 
 public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.ViewHolder> {
 
+    private OnItemClickListener onItemClickListener;
     private Context context;
     private List<InventoryItem> items;
 
@@ -32,13 +33,19 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        final InventoryItem item = items.get(position);
         if (items.get(position).getImage() != null) {
-            holder.itemInventoryItemPicture.setImageDrawable(Utils.convertBase64ToDrawable(context, items.get(position).getImage()));
+            holder.itemInventoryItemPicture.setImageDrawable(Utils.convertBase64ToDrawable(context, item.getImage()));
         }
-        holder.itemInventoryItemCode.setText(items.get(position).getProductId());
-        holder.itemInventoryItemName.setText(items.get(position).getTitle());
-        holder.itemInventoryItemPrice.setText("£" + items.get(position).getPrice());
+        holder.itemInventoryItemCode.setText(item.getProductId());
+        holder.itemInventoryItemName.setText(item.getTitle());
+        holder.itemInventoryItemPrice.setText("£" + item.getPrice());
         holder.itemInventoryItemQuantity.setText(context.getString(R.string.inventory_item_quantity, items.get(position).getStock()));
+        holder.itemInventoryItem.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onClick(item);
+            }
+        });
     }
 
     public void addItems(List<InventoryItem> items) {
@@ -51,8 +58,14 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
         return items.size();
     }
 
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
+        @BindView(R.id.itemInventoryItem)
+        LinearLayout itemInventoryItem;
         @BindView(R.id.itemInventoryItemPicture)
         ImageView itemInventoryItemPicture;
         @BindView(R.id.itemInventoryItemName)
@@ -69,5 +82,11 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
             super(view);
             ButterKnife.bind(this, view);
         }
+    }
+
+    public interface OnItemClickListener {
+
+        void onClick(InventoryItem item);
+
     }
 }
