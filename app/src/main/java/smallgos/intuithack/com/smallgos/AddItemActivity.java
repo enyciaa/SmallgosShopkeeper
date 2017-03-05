@@ -80,6 +80,7 @@ public class AddItemActivity extends AppCompatActivity {
                 && !TextUtils.isEmpty(quantity)) {
             item.setImage(image);
             item.setName(name);
+            item.setTitle(name);
             item.setProductId(productId);
             item.setPrice(price);
             item.setDescription(description);
@@ -98,5 +99,7 @@ public class AddItemActivity extends AppCompatActivity {
                 .subscribe(catalogResponse -> {
                     Log.i("Test", "response");
                 });
+
+        finish();
     }
 }
