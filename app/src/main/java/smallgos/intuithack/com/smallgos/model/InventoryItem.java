@@ -55,7 +55,7 @@ public class InventoryItem {
     }
 
     public String getPrice() {
-        return price;
+        return price.replaceAll("\\s+","").replace(",", ".");
     }
 
     public void setPrice(String price) {
@@ -63,7 +63,7 @@ public class InventoryItem {
     }
 
     public String getStock() {
-        return stock;
+        return stock.replaceAll("\\s+","");
     }
 
     public void setStock(String stock) {
