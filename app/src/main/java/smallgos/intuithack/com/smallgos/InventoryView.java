@@ -56,12 +56,14 @@ public class InventoryView extends LinearLayout {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(catalogResponse -> {
-                    ((InventoryAdapter) inventoryList.getAdapter()).addItems(catalogResponse.getItems());
-                    int itemsInStock = 0;
-                    for (InventoryItem item : catalogResponse.getItems()) {
-                        itemsInStock += Integer.parseInt(item.getStock());
+                    if (catalogResponse.getItems() != null) {
+                        ((InventoryAdapter) inventoryList.getAdapter()).addItems(catalogResponse.getItems());
+                        int itemsInStock = 0;
+                        for (InventoryItem item : catalogResponse.getItems()) {
+                            itemsInStock += Integer.parseInt(item.getStock());
+                        }
+                        inventoryRemainingItems.setText(getContext().getString(R.string.total_inventory, itemsInStock));
                     }
-                    inventoryRemainingItems.setText(getContext().getString(R.string.total_inventory, itemsInStock));
                 });
     }
 

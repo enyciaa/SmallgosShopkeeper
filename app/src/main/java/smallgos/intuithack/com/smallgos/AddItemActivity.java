@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -70,20 +69,17 @@ public class AddItemActivity extends AppCompatActivity {
         String name = binding.itemName.getText().toString();
         String productId = binding.itemProductId.getText().toString();
         String price = binding.itemPrice.getText().toString();
-        String description = binding.itemDescription.getText().toString();
         String quantity = binding.itemQuantity.getText().toString();
         if (!TextUtils.isEmpty(image)
                 && !TextUtils.isEmpty(name)
                 && !TextUtils.isEmpty(productId)
                 && !TextUtils.isEmpty(price)
-                && !TextUtils.isEmpty(description)
                 && !TextUtils.isEmpty(quantity)) {
             item.setImage(image);
             item.setName(name);
             item.setTitle(name);
             item.setProductId(productId);
             item.setPrice(price);
-            item.setDescription(description);
             item.setStock(quantity);
         } else {
             Toast.makeText(this, getString(R.string.data_missing), Toast.LENGTH_SHORT).show();
@@ -97,10 +93,9 @@ public class AddItemActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(catalogResponse -> {
-                    Log.i("Test", "response");
+                    finish();
                 });
-
-        finish();
     }
 
 }
+

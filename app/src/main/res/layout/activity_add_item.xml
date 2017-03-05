@@ -50,20 +50,7 @@
                     android:gravity="center_horizontal"
                     android:hint="@string/item_name_hint"
                     android:imeOptions="actionNext"
-                    android:singleLine="true"
-
-                    />
-
-                <EditText
-                    android:id="@+id/itemDescription"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/grid_24"
-                    android:layout_marginRight="@dimen/grid_24"
-                    android:layout_marginBottom="@dimen/grid_8"
-                    android:gravity="center_horizontal"
-                    android:hint="@string/item_name_description"
-                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
                     android:singleLine="true"
                     />
 
@@ -77,6 +64,7 @@
                     android:gravity="center_horizontal"
                     android:hint="@string/item_name_price"
                     android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
                     android:singleLine="true"
                     />
 
@@ -90,6 +78,7 @@
                     android:gravity="center_horizontal"
                     android:hint="@string/item_product_id_hint"
                     android:imeOptions="actionNext"
+                    android:inputType="textCapCharacters"
                     android:singleLine="true"
                     />
 
@@ -103,6 +92,7 @@
                     android:gravity="center_horizontal"
                     android:hint="@string/item_name_quantity"
                     android:imeOptions="actionDone"
+                    android:inputType="number"
                     android:singleLine="true"
                     />
 
