@@ -2,10 +2,11 @@ package smallgos.intuithack.com.smallgos;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +18,10 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import smallgos.intuithack.com.smallgos.model.InventoryItem;
 
-public class InventoryView extends CoordinatorLayout {
+public class InventoryView extends LinearLayout {
 
+    @BindView(R.id.inventoryRemainingItems)
+    TextView inventoryRemainingItems;
     @BindView(R.id.inventoryList)
     RecyclerView inventoryList;
 
@@ -50,6 +53,11 @@ public class InventoryView extends CoordinatorLayout {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(catalogResponse -> {
                     ((InventoryAdapter) inventoryList.getAdapter()).addItems(catalogResponse.getItems());
+                    int itemsInStock = 0;
+                    for (InventoryItem item : catalogResponse.getItems()) {
+                        itemsInStock += Integer.parseInt(item.getStock());
+                    }
+                    inventoryRemainingItems.setText(getContext().getString(R.string.total_inventory, itemsInStock));
                 });
     }
 
