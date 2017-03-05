@@ -48,6 +48,10 @@ public class InventoryView extends LinearLayout {
         inventoryList.setAdapter(inventoryAdapter);
         inventoryList.addItemDecoration(new TopSpaceDecoration(getContext().getResources().getDimensionPixelOffset(R.dimen.grid_16)));
 
+        refreshInventory();
+    }
+
+    public void refreshInventory() {
         SmallgosNetwork.INSTANCE.getInventory()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())

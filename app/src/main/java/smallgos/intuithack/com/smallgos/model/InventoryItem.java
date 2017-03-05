@@ -59,7 +59,7 @@ public class InventoryItem {
     }
 
     public void setPrice(String price) {
-        this.price = price;
+        this.price = price.replaceAll("\\s+","").replace(",", ".");
     }
 
     public String getStock() {
@@ -67,6 +67,6 @@ public class InventoryItem {
     }
 
     public void setStock(String stock) {
-        this.stock = stock;
+        this.stock = stock.replaceAll("\\s+","");
     }
 }

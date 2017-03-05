@@ -30,4 +30,11 @@ public class MainActivity extends AppCompatActivity {
         binding.mainContainer.addView(inventoryView);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (inventoryView != null) {
+            inventoryView.refreshInventory();
+        }
+    }
 }
